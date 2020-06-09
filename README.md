@@ -23,3 +23,9 @@ npm start
 npm run build
 ```
 
+**Deploy on surge**
+
+```cd build
+surge
+```
+
