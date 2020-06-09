@@ -14,20 +14,25 @@ class TabOne extends React.Component {
         }
     }
 
+    //This function is called from child component ImageForm to set state variable i.e. name and desc
     addData = (name, desc) => {
         this.setState({
             name,
             desc
         },()=>{
-            console.log(this.state);
+            //Get selected image
             let image = this.state.selectedImage;
+            //update data for selected image
             image.name = this.state.name;
             image.desc = this.state.desc;
+            //dispatch action to update image in redux store
             this.props.addDataToImage(image);
+            //close modal
             document.getElementById("image-form").style.display="none";
         });
     }
 
+    //Set selected image and then display modal i.e. Image Data Form
     handleAddDataEvent = (image) => {
         this.setState({
             selectedImage: image
@@ -37,24 +42,28 @@ class TabOne extends React.Component {
     }
 
   componentDidMount() {
+    //only fetch new images if the data store is empty
     if (this.props.images.length === 0) {
       const tempImages = [];
+      //associate an id with each image, in this case its an auto-incrementing variable
       let id = 0;
+      //Fetch 15 new images from unsplash.com random photos API, pass params client_id and count=15
       fetch(
-        "https://api.unsplash.com/photos/random/?client_id=Ul3Gpz6ulWarqjePqRZUk1XxXRua7RypILdOqaum0Ck&count=15",
+        "https://api.unsplash.com/photos/random/?client_id=Ul3Gpz6ulWarqjePqRZUk1XxXRua7RypILdOqaum0Ck&count=15", //TODO: Remove client_id value from here
         {
           method: "GET",
         }
       )
         .then((res) => res.json())
         .then((result) => {
+          //Push each image url fetched into a temp array.
           result.forEach((image) => {
-            console.log(image.urls);
             tempImages.push({ url: image.urls.small, id: id });
+            //increment image id
             id++;
           });
+          //dispatch action to initialize images in redux store
           this.props.setImages(tempImages);
-          console.log(this.props.images);
         })
         .catch((err) => console.error(err));
     }
@@ -83,12 +92,15 @@ class TabOne extends React.Component {
   }
 }
 
+//Map the redux state to this component's prop
 const mapStateToProps = (state) => {
   return {
     images: state.images,
   };
 };
 
+
+//Map redux actions to this component's prop
 const mapDispatchToProps = (dispatch) => {
   return {
     setImages: (images) => {

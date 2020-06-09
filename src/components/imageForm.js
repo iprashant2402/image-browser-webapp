@@ -6,18 +6,23 @@ const ImageForm = (props) => {
   const [desc, setDesc] = useState("");
   const [error, setError] = useState("");
 
+  //hadles user input in form fields and updates state.
   const handleTextChange = (event) => {
     let value = event.target.value;
     event.target.name === "name" ? setName(value) : setDesc(value);
   };
 
+  //Function which checks if the inputs are empty, sets error if any of the input is empty
+  //Otherwise calls its parent function addData() to set the inputs value in the parent component
   const validateInputs = () => {
     if (name && desc) {
         props.addData(name, desc);
+        //Reset Form Fields
         setName("");
         setDesc("");
         setError("");
     } else {
+      //Display Error
       setError("One or more fields are empty");
     }
   };
