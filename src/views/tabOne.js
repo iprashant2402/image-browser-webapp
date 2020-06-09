@@ -49,7 +49,7 @@ class TabOne extends React.Component {
       let id = 0;
       //Fetch 15 new images from unsplash.com random photos API, pass params client_id and count=15
       fetch(
-        "https://api.unsplash.com/photos/random/?client_id=Ul3Gpz6ulWarqjePqRZUk1XxXRua7RypILdOqaum0Ck&count=15", //TODO: Remove client_id value from here
+        "https://api.unsplash.com/photos/random/?client_id=XXXXX", //TODO: INSERT YOUR CLIENT ACCESS KEY HERE IN PLACE OF XXXXXX
         {
           method: "GET",
         }
