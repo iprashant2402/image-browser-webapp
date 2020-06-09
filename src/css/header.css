@@ -1,0 +1,49 @@
+.headerBar{
+    background-color: rgba(0,0,0,0.82);
+    height: 50px;
+    z-index: 1 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content: center !important;
+    display: flex;
+}
+
+.title{
+    display: block;
+}
+
+.tab{
+    justify-content: center;
+    color: #fff !important;
+    height: 100%;
+    font-weight: 900;
+    display: inline-block;
+    padding: 7px;
+    text-decoration: none !important;
+}
+
+.tab:hover{
+    text-decoration: none !important;
+}
+
+.activeTab{
+    color: #000 !important;
+    background-color: rgb(255,255,255,0.62) !important;
+}
+
+@media only screen and (max-width: 993px) {
+    .tab{
+        font-size: 12px;
+        width: 50%;
+        text-align: center;
+    }
+    .tabs{
+        width: 100%;
+    }
+}

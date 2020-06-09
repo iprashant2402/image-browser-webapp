@@ -1,0 +1,2 @@
+export const ADD_DATA_TO_IMAGE = 'ADD_DATA_TO_IMAGE';
+export const INITIALIZE_IMAGE = 'INITIALIZE_IMAGE';

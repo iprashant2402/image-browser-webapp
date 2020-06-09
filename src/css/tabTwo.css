@@ -1,0 +1,5 @@
+.imageDataWrapper{
+    word-wrap: break-word;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }

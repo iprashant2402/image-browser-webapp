@@ -1,0 +1,71 @@
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modalContent {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+  }
+  
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .error{
+      color: #e63946;
+  }
+
+  .input-wrapper{
+      padding: 8px;
+  }
+
+  .sf-input{
+      height: 40px;
+      width: 50%;
+      margin-left: 25%;
+      border: 1px solid rgba(0,0,0,0.22);
+  }
+
+  .sf-btn{
+      height: 40px;
+      width: 50%;
+      margin-left: 25%;
+      background-color: rgba(0,0,0,0.72);
+      border: none;
+      color: white;
+  }
+
+  .form-title{
+      font-weight: 900;
+      text-align: center;
+  }
+
+  @media only screen and (max-width: 993px) {
+    .sf-input{
+        width: 100%;
+        margin-left: 0;
+    }
+}

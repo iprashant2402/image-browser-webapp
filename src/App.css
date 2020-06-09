@@ -1,0 +1,45 @@
+.bodyWrapper{
+  margin-top: 50px;
+  background-color: #fff;
+}
+
+body{
+  background-color: rgba(0,0,0,0.1) !important;
+}
+
+.imageWrapper{
+  padding: 16px;
+}
+
+.columns{
+  columns: 3;
+  column-gap: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns{
+    columns: 1;
+    column-gap: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .columns{
+    columns: 2;
+    column-gap: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .columns{
+    columns: 3;
+    column-gap: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .columns{
+    columns: 3;
+    column-gap: 0;
+  }
+}
